@@ -1,2 +1,2 @@
-# portfolio
-Prueba para utilizacion en dif dispositivos del repositorio sobre mi portfolio
+# Pokedex
+Repositorio sobre la creacion de un proyecto personal, una Pokédex!, implementando asi conocimientos sobre js y poniendome a prueba con git
