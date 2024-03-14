@@ -233,3 +233,65 @@ header i{
 .fairy{
     background-color: var(--type-fairy);
 }
+
+.poke-container{
+    background-color: var(--clr-white);
+    border-radius: 25px ;
+    box-shadow: 0 0 10px #13131323;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+}
+
+.poke-info{
+    border-top: solid 2px var(--clr-grey);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.5rem 3rem 1.5rem 3rem;
+}
+
+.numero .id{
+    padding: 0rem 1.2rem ;
+    font-size: 2.5rem;
+    font-weight: 500;
+
+    background-color: var(--clr-black);
+    color: white;
+    position: absolute;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.imagen{
+    margin: auto;
+    padding-top: 1.7rem;
+    height: 52dvh;
+}
+
+.imagen img{
+    width: 50dvw;
+}
+
+
+.poke-name{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.type, .pokemon-stats{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.type .tipo, .pokemon-stats .stat{
+    border-radius: 10px;
+    padding: 0.2rem 0.7rem;    
+}
+
+.pokemon-stats .stat{
+    background-color: var(--clr-grey);
+}
+
