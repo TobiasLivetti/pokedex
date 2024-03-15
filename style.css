@@ -39,7 +39,7 @@ body{
     background-color: var(--clr-grey) ;
 }
 .container{
-    max-width: 1200px;
+    max-width: 1000px;
     margin: auto;
     padding: 2rem;
 }
@@ -53,6 +53,7 @@ header{
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    z-index: 100;
 }
 
 .separador{
@@ -234,13 +235,21 @@ header i{
     background-color: var(--type-fairy);
 }
 
-.poke-container{
+.cubos .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: 1.3rem;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.pokemon{
     background-color: var(--clr-white);
-    border-radius: 25px ;
+    width: 100%;
+    border-radius: 20px ;
     box-shadow: 0 0 10px #13131323;
     display: flex;
     flex-direction: column;
-    max-width: 500px;
     margin: auto;
 }
 
@@ -249,34 +258,37 @@ header i{
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
-    padding: 0.5rem 3rem 1.5rem 3rem;
+    padding: 0.5rem 2rem 1.5rem 2rem;
 }
 
 .numero .id{
-    padding: 0rem 1.2rem ;
-    font-size: 2.5rem;
+    padding: 0.1rem 1.2rem ;
+    font-size: 1.5rem;
     font-weight: 500;
 
     background-color: var(--clr-black);
     color: white;
     position: absolute;
-    border-top-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .imagen{
     margin: auto;
-    padding-top: 1.7rem;
-    height: 52dvh;
+    padding-top: 0.5rem;
+    min-height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .imagen img{
-    width: 50dvw;
+    height: 22vh;
 }
 
 
 .poke-name{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
@@ -287,6 +299,7 @@ header i{
 }
 
 .type .tipo, .pokemon-stats .stat{
+    font-size: 0.9rem;
     border-radius: 10px;
     padding: 0.2rem 0.7rem;    
 }
@@ -295,3 +308,24 @@ header i{
     background-color: var(--clr-grey);
 }
 
+.type .tipo{
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1050px) {
+    .container{
+        max-width: 700px;
+    }
+
+    .cubos .container{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+}
+
+@media screen and (max-width: 650px){
+    .cubos .container{
+        grid-template-columns: 1fr;
+        margin: auto 1rem;
+    }
+}
