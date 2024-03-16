@@ -28,7 +28,7 @@ const getPokemon = async(min, max) => {
             const resp = await fetch(URL + i);
 
             const data = await resp.json();
-            await mostrarPokemon(data);
+            mostrarPokemon(data);
         }
     }catch (error) {
         alert( error );
@@ -93,8 +93,6 @@ mostrarMasMenos.addEventListener("click", () => {
     console.log(maximo);
      getPokemon(minimo, maximo);
 });
-
-
 
 
 botonesFiltro.forEach(boton => boton.addEventListener("click", async(event) =>{
