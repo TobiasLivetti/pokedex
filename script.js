@@ -1,10 +1,30 @@
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 const listaPokemon = document.getElementById("listaPokemon"); 
-const botonesFiltro = document.querySelectorAll(".btn-filter")
+const botonesFiltro = document.querySelectorAll(".btn-filter");
 
-const getPokemon = async() => {
+// BOTONES MOSTRAR MAS
+const mostrarMasMenos = document.getElementById("mas");
+
+let minimo = 1;
+let maximo = 27;
+
+const getPokemon = async(min, max) => {
+    if(maximo >= 162){
+        mostrarMasMenos.innerHTML = `
+        <div class="mas" id="menos">
+            <div class="flecha-menos"></div>
+            <p>mostrar menos</p>
+        </div>
+        `;
+    }   else mostrarMasMenos.innerHTML = `
+        <div class="mas" id="mas">
+            <p>mostrar mas</p>
+            <div class="flecha"></div>
+        </div>
+        `;
+
     try{
-        for(let i = 1; i <= 151; i++){
+        for(let i = min; i <= max; i++){
             const resp = await fetch(URL + i);
 
             const data = await resp.json();
@@ -58,30 +78,52 @@ const mostrarID = (id) => {
     }else return id;
 }
 
-getPokemon();
+getPokemon(minimo, maximo);
+
+
+mostrarMasMenos.addEventListener("click", () => {
+    if(maximo >= 162){
+        listaPokemon.innerHTML = '';
+        minimo = 1;
+        maximo = 27;
+    }else {
+        minimo += 27;
+        maximo += 27;
+    }
+    console.log(maximo);
+     getPokemon(minimo, maximo);
+});
+
+
+
 
 botonesFiltro.forEach(boton => boton.addEventListener("click", async(event) =>{
     const botonId = event.currentTarget.id;
     listaPokemon.innerHTML = '';
+    mostrarMasMenos.innerHTML = '';
 
-    try{
-        for(let i = 1; i <= 151; i++){
-            const resp = await fetch(URL + i);
-    
-            const data = await resp.json();
-            
-            if(botonId === "todos"){
-                mostrarPokemon(data);
-            }else{
+    if(botonId === "todos"){
+        minimo = 1;
+        maximo = 27;
+        getPokemon(minimo, maximo);
+    }else{
+        
+        try{
+            for(let i = 1; i <= 162; i++){
+                const resp = await fetch(URL + i);
+        
+                const data = await resp.json();
+                
                 const tipoos = data.types.map(type => type.type.name);
 
                 if (tipoos.some(tipo => tipo.includes(botonId))){
                     mostrarPokemon(data);
                 }
+                
             }
+        }catch (error) {
+            alert( error );
         }
-    }catch (error) {
-        alert( error );
     }
 }));
 
