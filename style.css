@@ -50,30 +50,79 @@ body{
 
 header{
     background-color: var(--clr-black);
-    padding: 1rem 7rem;
+    padding: 1rem 3rem;
     width: 100%;
+    position: fixed;
+    z-index: 100;
+} 
+
+header .container{
+    padding: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    z-index: 100;
 }
 
 .separador{
-    height: 7rem;
+    height: 6rem;
 }
 
 header .logoContainer img{
-    width: 13rem;
+    width: 11rem;
 }
 
-header .redes{
+header nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 0.6rem;
+    color: var(--clr-white);
 }
+
+.custom-btn {
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+  }
+
+.btn-14 {
+    background: var(--clr-black);
+    border: none;
+    z-index: 1;
+  }
+  .btn-14:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: #1c1c1c;
+    background-image: linear-gradient(315deg, #1c1c1c 0%, #2d2d2d 74%); 
+    transition: all 0.3s ease;
+  }
+  .btn-14:hover {
+    color: var(--clr-white);
+  }
+  .btn-14:hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  .btn-14:active {
+    top: 2px;
+  }
+
+  
 
 header i{
     color: var(--clr-white);
@@ -116,6 +165,10 @@ header i{
     font-weight: 700;
     font-size: 7rem;
     height: 8.5rem;
+}
+
+#hero .small{
+    display: none;
 }
 
 #hero .contenido .text p{
@@ -327,6 +380,7 @@ header i{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: 300ms;
 }
 .mas p{
     font-size: 1.2rem;
@@ -353,7 +407,147 @@ header i{
 }
 
 .mas:hover{
-    transform: scale(1.008);
+    transform: scale(1.01);
+}
+
+.botonVolver{ 
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 1rem;
+}
+.volver{
+    width: 7vh;
+    height: 7vh;
+    margin-right: 3rem;
+    font-size: 2rem;
+    background-color: var(--type-electric);
+    padding: 0.8rem;
+    border-radius: 100%;
+    transition: 200ms;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volver:hover{
+    transform: scale(1.1);
+}
+
+
+footer{
+    margin-top: 1.7rem;
+    background-color: var(--clr-black);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end; 
+}
+
+footer .container{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: normal;
+    color: var(--clr-white);
+}
+
+footer{
+    font-size: 0.9rem;
+}
+footer h3{
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+footer .logos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer .logos a{
+    margin: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none; 
+}
+
+footer .logos .link{
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #121212;
+    border: solid 1px rgb(62, 62, 62);
+    border-left: none;
+}
+
+footer .logos i{
+    font-size: 2.8rem;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+footer .logos i:hover{
+    transform: scale(1.1);
+}
+
+footer .contacto .email{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 2.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+footer .contacto ul{
+    list-style-type: none;
+}
+footer .contacto .gmail, footer .contacto .copy{
+    height: 100%;
+    border: solid 1px rgb(62, 62, 62);
+}
+
+footer .contacto .gmail{
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    padding: 0px 13px;
+}
+
+footer .contacto .copy{
+    background-color: #0c0c0c;
+    border-left: none;
+    padding: 0px 11px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+@keyframes arriba {
+    0%{top: 0;}
+    100%{top: 5%;}
+
+}
+
+footer .copyright{
+    background-color: #0c0c0c;
+    color: #232323;
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 1050px) {
@@ -361,15 +555,65 @@ header i{
         max-width: 700px;
     }
 
+    #hero .contenido img{
+        overflow: hidden;
+    }
+
+    #hero .contenido .text{
+        margin-right: rem;
+    }
+
+    #hero .big{
+        display: none;
+    }
+
+    #hero .small{
+        display: inline-block;
+        line-height: 65%;
+    }
+
     .cubos .container{
         grid-template-columns: 1fr 1fr;
     }
-    
+
+    .volver{
+        margin-right: 1.5rem;
+    }
+
+    footer .container{
+        max-width: 800px;
+    }
+}
+
+@media screen and (max-width: 830px){
+    footer .container{
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
 }
 
 @media screen and (max-width: 650px){
+    
+    #hero{
+        height: 70vh;
+    }
+    
+    #hero .contenido img{
+        display: none;
+    }
+
+    #hero .contenido .text{
+        margin: auto;
+    }
+
     .cubos .container{
         grid-template-columns: 1fr;
         margin: auto 1rem;
+    }
+
+    .volver{
+        margin-top: 1rem;
+        margin-right: 1rem;
     }
 }

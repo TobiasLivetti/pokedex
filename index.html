@@ -10,16 +10,18 @@
 </head>
 <body>
     <header>
-        <div class="logoContainer">
-            <img src="media/logo.png" alt="">
-        </div>
-        
-        <div class="redes">
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-linkedin"></i>
+        <div class="container">
+            <div class="logoContainer">
+                <img src="media/logo.png" alt="">
+            </div>
+
+            <nav>
+                <a href="#filtro"><button class="custom-btn btn-14">FILTRO</button></a>
+                <a href="#contacto"><button class="custom-btn btn-14">CONTACTO</button></a>
+            </nav>
         </div>
     </header>
-    <div class="separador"></div>
+    <div class="separador" id="top"></div>
 
     <section id="hero">
         <div class="contenido">
@@ -27,7 +29,8 @@
             <img src="media/ash.png" alt="">
 
             <div class="text">
-                <h1>Pokédex</h1>
+                <h1 class="big">Pokédex</h1>
+                <h1 class="small">Poké<br>dex</h1>
                 <p>by Tobias Livetti</p>
             </div>
 
@@ -37,8 +40,8 @@
     <section id="pokedex">
         <div class="navegacion">
             <div class="container">
-                <div class="filtro">
-                    <p onclick="filtros()"><i class="fa-solid fa-list"></i> Filtro</p>
+                <div class="filtro" id="filtro">
+                    <p><i class="fa-solid fa-filter"></i> Filtro</p>
                 </div>
 
                 <div class="tipos">
@@ -68,13 +71,47 @@
         <div class="cubos">
             <div class="container" id="listaPokemon"></div>
             <div class="mas" id="mas">
-                <p>mostrar mas</p>
+                <p>mostrar más</p>
                 <div class="flecha"></div>
             </div>
         </div>
     
         
     </section>
+
+    <section class="botonVolver">
+        <div class="volver">
+            <a href="#top" ><i class="fa-solid fa-arrow-up" style="color: black;"></i></button></a>
+        </div>
+    </section>
+    
+
+    <footer id="contacto">
+        <div class="container">
+            <div class="Redes">
+                <h3>Redes</h3>
+                <div class="logos">
+                    <a href="https://github.com/TobiasLivetti" target="blank"><i class="fa-brands fa-square-github"></i><span class="link">github.com/TobiasLivetti</span></a>
+                    <a href="https://linkedin.com/in/tobias-livetti-5411a82b0" target="blank"><i class="fa-brands fa-linkedin"></i><span class="link">linkedin.com/in/tobias-livetti-5411a82b0</span></a>
+                    <a href="https://instagram.com/tobylivetti" target="blank"><i class="fa-brands fa-instagram"></i><span class="link">instagram.com/tobylivetti</span></a>
+                </div>
+            </div>
+            <div class="contacto">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="mailto:tobiaslivetti@gmail.com">Presione aquí</a> para contactarse o copie mi correo
+                        <div class="email">
+                            <p class="gmail">tobiaslivetti@gmail.com</p>
+                            <button class="copy"><i class="fa-regular fa-copy fa-sm" style="color: #fafafa;"></i></button>
+                        </div>
+                    </li>
+
+                    <li>Descargue mi CV haciendo <a href="cv.pdf" target="blank">click aquí</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">© 2024 Tobias Livetti</div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

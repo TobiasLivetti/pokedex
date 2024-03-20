@@ -18,10 +18,11 @@ const getPokemon = async(min, max) => {
         `;
     }   else mostrarMasMenos.innerHTML = `
         <div class="mas" id="mas">
-            <p>mostrar mas</p>
+            <p>mostrar más</p>
             <div class="flecha"></div>
         </div>
         `;
+
 
     try{
         for(let i = min; i <= max; i++){
@@ -78,6 +79,7 @@ const mostrarID = (id) => {
     }else return id;
 }
 
+
 getPokemon(minimo, maximo);
 
 
@@ -90,8 +92,7 @@ mostrarMasMenos.addEventListener("click", () => {
         minimo += 27;
         maximo += 27;
     }
-    console.log(maximo);
-     getPokemon(minimo, maximo);
+    getPokemon(minimo, maximo);
 });
 
 
